@@ -29,4 +29,10 @@ class Node
     def next_node
         @next_node
     end
+
+    # def append(new_data)
+    #     @data = new_data
+    # end
+
 end
+
