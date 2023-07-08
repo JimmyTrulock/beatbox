@@ -22,3 +22,13 @@ describe "#append" do
         expect(list.head.data).to eq("doop")
     end
 end
+
+describe "#count" do
+    it "counts the nodes in the list" do
+        list = LinkedList.new
+        list.append("doop")
+        count = list.count
+
+        expect(count).to eq (1)
+    end
+end

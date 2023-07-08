@@ -25,5 +25,17 @@ class LinkedList
         end
     end
 
-    
+    def count
+        if self.is_empty?
+            count = 0
+        else
+            count = 1
+            current_node = @head
+            while current_node.next != nil
+                current_node = current_node.next
+                count += 1
+            end
+        end
+        count
+    end
 end
