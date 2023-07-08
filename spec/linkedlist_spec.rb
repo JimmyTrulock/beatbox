@@ -6,4 +6,19 @@ describe LinkedList do
 
         expect(list).to be_an_instance_of(LinkedList)
     end
+
+    it 'starts empty' do
+        list = LinkedList.new
+
+        expect(list.head).to eq(nil)
+    end
+end
+
+describe "#append" do
+    it "adds a node to the beginning of the list" do
+        list = LinkedList.new
+        list.append("doop")
+
+        expect(list.head.data).to eq("doop")
+    end
 end
