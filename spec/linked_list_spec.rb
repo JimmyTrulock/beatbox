@@ -57,3 +57,16 @@ describe "#prepend" do
         expect(string_list).to eq("deep"", ""doop")
     end
 end
+
+describe "#insert" do
+    it "inserts a node at a givin position" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("deep")
+        list.insert(1, "woo")
+        string_list = list.to_string
+
+        expect(string_list).to eq("doop"", ""woo"", ""deep")
+    end
+end
+

@@ -67,12 +67,13 @@ class LinkedList
         end
     end
 
-    # def insert(position, data)
-    #     node = find(position)
-    #     unless node
-    #         old_next = node.next_node
-    #         node.next_node = Node.new(data)
-    #         node.next_node.next_node = old_next
-    #     end
-    # end
+    def insert(index, data)
+        current_node = @head
+            index.times do
+
+            new_node = Node.new(data)
+            new_node.next_node = current_node.next_node
+            current_node.next_node = new_node
+        end
+    end
 end
