@@ -78,7 +78,6 @@ describe "#find" do
         list.append("woo")
         list.append("womp")
         list.append("teek")
-
         test_find = list.find(1, 2)
 
         expect(test_find).to eq("deep"", ""woo")
@@ -97,5 +96,18 @@ describe "#includes?" do
     end
 end
 
+describe "#pop" do
+    it "removes and returnes the last node" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("deep")
+        list.append("woo")
+        removed = list.pop
+        string_list = list.to_string
+
+        expect(removed).to eq("woo")
+        expect(string_list).to eq("doop"", ""deep")
+    end
+end
 
 
