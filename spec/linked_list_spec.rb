@@ -70,3 +70,19 @@ describe "#insert" do
     end
 end
 
+describe "#find" do
+    it "finds an index and returnes desired number of elements" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("deep")
+        list.append("woo")
+        list.append("womp")
+        list.append("teek")
+
+        test_find = list.find(1, 2)
+
+        expect(test_find).to eq("deep"", ""woo")
+    end
+end
+
+

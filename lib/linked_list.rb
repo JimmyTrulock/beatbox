@@ -22,7 +22,7 @@ class LinkedList
             current_node = @head
             new_node = Node.new(data)
             while current_node.next_node != nil
-                currennt_node = current_nod.next_node
+                current_node = current_node.next_node
             end
             current_node.next_node = new_node
         end
@@ -75,5 +75,20 @@ class LinkedList
             new_node.next_node = current_node.next_node
             current_node.next_node = new_node
         end
+    end
+
+    def find(index, data)
+        current_node = @head
+        bucket = []
+
+        index.times do
+            current_node = current_node.next_node
+        end
+
+        data.times do
+            bucket << current_node.data
+            current_node = current_node.next_node
+        end
+        bucket.join(", ")
     end
 end
