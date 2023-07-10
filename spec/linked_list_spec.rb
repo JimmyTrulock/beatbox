@@ -85,4 +85,17 @@ describe "#find" do
     end
 end
 
+describe "#includes?" do
+    it "looks for given data in list" do
+        list = LinkedList.new
+        list.append("doop")
+        list.append("deep")
+        list.append("woo")
+        search = list.includes?("deep")
+
+        expect(search).to eq("deep")
+    end
+end
+
+
 

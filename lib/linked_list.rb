@@ -61,9 +61,9 @@ class LinkedList
         if self.is_empty?
             @head = Node.new(data)
         else
-            curr_head = Node.new(data)
-            curr_head.next_node = @head
-            @head = curr_head
+            current_head = Node.new(data)
+            current_head.next_node = @head
+            @head = current_head
         end
     end
 
@@ -91,4 +91,23 @@ class LinkedList
         end
         bucket.join(", ")
     end
+
+    def includes?(data)
+        current_node = @head
+
+        while current_node.data != data
+            current_node = current_node.next_node
+        end
+        current_node.data
+    end
+
+    def pop
+        current_node = @head
+
+        while current_node.next_node != nil
+            current_node = current_node.next_node
+        end
+        current_node.data
+        
+        
 end
