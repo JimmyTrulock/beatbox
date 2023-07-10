@@ -90,9 +90,11 @@ describe "#includes?" do
         list.append("doop")
         list.append("deep")
         list.append("woo")
-        search = list.includes?("deep")
+        search1 = list.includes?("woo")
+        search2 = list.includes?("that")
 
-        expect(search).to eq("deep")
+        expect(search1).to eq(true)
+        expect(search2).to eq(false)
     end
 end
 
