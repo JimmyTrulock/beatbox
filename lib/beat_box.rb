@@ -46,11 +46,25 @@ class BeatBox
                 current_node = current_node.next_node
                 count += 1
             end
-        end
-    
+        end   
         count
     end
 
+    def play
+        bucket = []
+
+        if self.list.is_empty?
+            "empty"
+        else
+            current_node = list.head
+            while current_node.next_node != nil
+                bucket << current_node.data
+                current_node = current_node.next_node
+            end
+        end
+        beats = bucket.join(" ")
+        `say -r 50 -v Boing #{beats}`
+    end
 end
 
 

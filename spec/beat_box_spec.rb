@@ -31,3 +31,13 @@ describe "#count" do
         expect(count).to eq (3)
     end
 end
+
+describe "#play" do
+    it "plays the beats in the list" do
+        bb = BeatBox.new
+        bb.append("doop deep womp")
+        say = bb.play
+
+        expect(say).to eq(`say -r 50 -v Boing doop deep womp`)
+    end
+end
