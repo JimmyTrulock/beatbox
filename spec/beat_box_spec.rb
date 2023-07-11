@@ -1,11 +1,11 @@
 require "./lib/beat_box.rb"
 
-describe Beatbox do
+describe BeatBox do
     it "creates a class with an empty list" do
         bb = BeatBox.new
         head_check = bb.list.head
 
-        expect(bb).to be_an_instance_of(Beatbox)
+        expect(bb).to be_an_instance_of(BeatBox)
         expect(head_check).to eq(nil)
     end
 end
@@ -21,3 +21,13 @@ describe "#append" do
     end
 end
 
+describe "#count" do
+    it "counts the nodes in the list" do
+        bb = BeatBox.new
+        bb.append("doop deep womp")
+        count = bb.count
+
+        expect(bb.list.head.data).to eq("doop")
+        expect(count).to eq (3)
+    end
+end

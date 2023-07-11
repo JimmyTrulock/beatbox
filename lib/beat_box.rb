@@ -37,7 +37,7 @@ class BeatBox
     end
 
     def count
-        if self.is_empty?
+        if self.list.is_empty?
             count = 0
         else
             count = 1
@@ -47,6 +47,7 @@ class BeatBox
                 count += 1
             end
         end
+    
         count
     end
 
